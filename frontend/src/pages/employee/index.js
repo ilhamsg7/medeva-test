@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAllEmployees } from "../services/employeeService";
+import { getAllEmployees } from "../../services/employeeService";
 import { useNavigate } from "react-router-dom";
 
 const EmployeeList = () => {

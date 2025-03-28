@@ -1,0 +1,408 @@
+{
+	"info": {
+		"_postman_id": "81afd152-9cd4-4cb6-980d-5335cb8e1ea0",
+		"name": "Medeva Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14998528"
+	},
+	"item": [
+		{
+			"name": "POST Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama_lengkap\": \"Ilham Sinatrio Gumelar\",\n    \"nomor_identitas\": \"1234567891236543\",\n    \"jenis_kelamin\": \"Laki-laki\",\n    \"tanggal_lahir\": \"2002-04-06\",\n    \"username\": \"ilhamsg7\",\n    \"password\": \"password\",\n    \"role\": \"Admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Employee Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nama_lengkap\": \"Ilham Sinatrio Gumelar\",\n    \"nomor_identitas\": \"1234567891236543\",\n    \"jenis_kelamin\": \"Laki-laki\",\n    \"tanggal_lahir\": \"2002-04-06\",\n    \"username\": \"ilhamsg7\",\n    \"password\": \"password\",\n    \"role\": \"Admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b-ltBSwyh/i08MakbU/NcZLxgTjHI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Mar 2025 03:23:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Created Employee Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "UPDATE Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama_lengkap\": \"Ilham Sinatrio Gumelar Mangunprojo Hadiningrat\",\n    \"nomor_identitas\": \"1234567891236543\",\n    \"jenis_kelamin\": \"Laki-laki\",\n    \"tanggal_lahir\": \"2002-04-06\",\n    \"username\": \"ilhamsg7\",\n    \"password\": \"password\",\n    \"role\": \"Admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/employee/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employee",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Employee Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nama_lengkap\": \"Ilham Sinatrio Gumelar Mangunprojo Hadiningrat\",\n    \"nomor_identitas\": \"1234567891236543\",\n    \"jenis_kelamin\": \"Laki-laki\",\n    \"tanggal_lahir\": \"2002-04-06\",\n    \"username\": \"ilhamsg7\",\n    \"password\": \"password\",\n    \"role\": \"Admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/employee/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b-+3OsaD9B2Z/iB/EBOg0rkv5IG2s\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Mar 2025 03:23:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Updated Employee Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET All Employee",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama_lengkap\": \"Ilham Sinatrio Gumelar\",\n    \"nomor_identitas\": \"1234567891236543\",\n    \"jenis_kelamin\": \"Laki-laki\",\n    \"tanggal_lahir\": \"2002-04-06\",\n    \"username\": \"ilhamsg7\",\n    \"password\": \"password\",\n    \"role\": \"Admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET All Employee Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nama_lengkap\": \"Ilham Sinatrio Gumelar\",\n    \"nomor_identitas\": \"1234567891236543\",\n    \"jenis_kelamin\": \"Laki-laki\",\n    \"tanggal_lahir\": \"2002-04-06\",\n    \"username\": \"ilhamsg7\",\n    \"password\": \"password\",\n    \"role\": \"Admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "865"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"361-yFYUe5ODAi0R60A5olWsrHUFU7Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Mar 2025 03:23:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"namaLengkap\": \"Ilham Sinatrio Gumelar\",\n        \"nomorIdentitas\": \"1234567891236543\",\n        \"jenisKelamin\": \"Laki-laki\",\n        \"tanggalLahir\": \"2002-04-06T00:00:00.000Z\",\n        \"username\": \"ilhamsg7\",\n        \"password\": \"$2b$10$6ZVNMNL/iqS9QUP5Ld7NHuDDwzoopHV.RHIzeWXcGU3ENNnqcDfo.\",\n        \"role\": \"Admin\",\n        \"filePath\": null\n    },\n    {\n        \"id\": 1,\n        \"namaLengkap\": \"Ilham Sinatrio Gumelar Mangunprojo Hadiningrat\",\n        \"nomorIdentitas\": \"1234567891236543\",\n        \"jenisKelamin\": \"Laki-laki\",\n        \"tanggalLahir\": \"2002-04-06T00:00:00.000Z\",\n        \"username\": \"ilhamsg7\",\n        \"password\": \"$2b$10$VQhjZ.poNrg/PxmvhKvmVeJBHQPQxpmnVMazqaZj6GnYG4SxvON9.\",\n        \"role\": \"Admin\",\n        \"filePath\": null\n    },\n    {\n        \"id\": 3,\n        \"namaLengkap\": \"Ilham Sinatrio Gumelar\",\n        \"nomorIdentitas\": \"1234567891236543\",\n        \"jenisKelamin\": \"Laki-laki\",\n        \"tanggalLahir\": \"2002-04-06T00:00:00.000Z\",\n        \"username\": \"ilhamsg7\",\n        \"password\": \"$2b$10$q8BLYkf9pEXMu3Iqy5NEFuyyAu6PpM8Ypeir48bxayBlCLT//4DgK\",\n        \"role\": \"Admin\",\n        \"filePath\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET All Employee By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama_lengkap\": \"Ilham Sinatrio Gumelar\",\n    \"nomor_identitas\": \"1234567891236543\",\n    \"jenis_kelamin\": \"Laki-laki\",\n    \"tanggal_lahir\": \"2002-04-06\",\n    \"username\": \"ilhamsg7\",\n    \"password\": \"password\",\n    \"role\": \"Admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/employee/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"employee",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET All Employee By Id Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nama_lengkap\": \"Ilham Sinatrio Gumelar\",\n    \"nomor_identitas\": \"1234567891236543\",\n    \"jenis_kelamin\": \"Laki-laki\",\n    \"tanggal_lahir\": \"2002-04-06\",\n    \"username\": \"ilhamsg7\",\n    \"password\": \"password\",\n    \"role\": \"Admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/employee/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "279"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"117-K/BsxMX6J2mqZJjfdN2Wmm45eW8\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Mar 2025 02:20:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"namaLengkap\": \"Ilham Sinatrio Gumelar\",\n    \"nomorIdentitas\": \"1234567891236543\",\n    \"jenisKelamin\": \"Laki-laki\",\n    \"tanggalLahir\": \"2002-04-06T00:00:00.000Z\",\n    \"username\": \"ilhamsg7\",\n    \"password\": \"$2b$10$EdyMP8IAdvmiaBRUJYE3kOb6TLkYyB0BkZWV/ewHrZOFypMCzOOF2\",\n    \"role\": \"Admin\",\n    \"filePath\": null\n}"
+				}
+			]
+		}
+	]
+}

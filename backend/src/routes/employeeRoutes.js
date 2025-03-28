@@ -7,6 +7,6 @@ const upload = require('../middleware/fileUploadValidation');
 router.get('/', EmployeeController.getAll);
 router.get('/:id', EmployeeController.getById);
 router.post('/', upload.single('file'), EmployeeController.create);
-router.put('/:id', upload.single('file'), EmployeeController.update);
+router.post('/:id', upload.single('file'), EmployeeController.update);
 
 module.exports = router;

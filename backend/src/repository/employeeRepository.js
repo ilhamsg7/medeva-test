@@ -1,81 +1,61 @@
-const pool = require("../config/db");
-const Employee = require("../domain/employee");
+// src/repository/employeeRepository.js
+const prisma = require("../prisma/client");
+const bcrypt = require("bcryptjs");
 
 class EmployeeRepository {
   static async findAll() {
-    const result = await pool.query("SELECT * FROM employees");
-    return result.rows;
+    return prisma.employee.findMany();
   }
 
   static async findById(id) {
-    const result = await pool.query("SELECT * FROM employees WHERE id = $1", [
-      id,
-    ]);
-    return result.rows[0];
+    return prisma.employee.findUnique({
+      where: { id: Number(id) },
+    });
   }
 
-  static async create(employeeData) {
-    const {
-      namaLengkap,
-      nomorIdentitas,
-      jenisKelamin,
-      tanggalLahir,
-      username,
-      password,
-      role,
-      filePath,
-    } = employeeData;
+  static async create(data) {
+    const hashedPassword = await bcrypt.hash(data.password, 10);
 
-    const result = await pool.query(
-      `INSERT INTO employees
-       (nama_lengkap, nomor_identitas, jenis_kelamin, tanggal_lahir, username, password, role, file_path)
-       VALUES($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *`,
-      [
-        namaLengkap,
-        nomorIdentitas,
-        jenisKelamin,
-        tanggalLahir,
-        username,
-        password,
-        role,
-        filePath,
-      ]
-    );
-
-    return result.rows[0];
+    return prisma.employee.create({
+      data: {
+        namaLengkap: data.nama_lengkap,
+        nomorIdentitas: data.nomor_identitas,
+        jenisKelamin: data.jenis_kelamin,
+        tanggalLahir: new Date(data.tanggal_lahir),
+        username: data.username,
+        password: hashedPassword,
+        role: data.role,
+        filePath: data.file_path || null,
+      },
+    });
   }
 
-  static async update(id, employeeData) {
-    const {
-      namaLengkap,
-      nomorIdentitas,
-      jenisKelamin,
-      tanggalLahir,
-      username,
-      password,
-      role,
-      filePath,
-    } = employeeData;
+  static async update(id, data) {
+    const updateData = {};
 
-    const result = await pool.query(
-      `UPDATE employees
-       SET nama_lengkap=$1, nomor_identitas=$2, jenis_kelamin=$3, tanggal_lahir=$4, 
-           username=$5, password=$6, role=$7, file_path=$8
-       WHERE id=$9 RETURNING *`,
-      [
-        namaLengkap,
-        nomorIdentitas,
-        jenisKelamin,
-        tanggalLahir,
-        username,
-        password,
-        role,
-        filePath,
-        id,
-      ]
-    );
+    if (data.nama_lengkap) updateData.namaLengkap = data.nama_lengkap;
+    if (data.nomor_identitas) updateData.nomorIdentitas = data.nomor_identitas;
+    if (data.jenis_kelamin) updateData.jenisKelamin = data.jenis_kelamin;
+    if (data.tanggal_lahir)
+      updateData.tanggalLahir = new Date(data.tanggal_lahir);
+    if (data.username) updateData.username = data.username;
+    if (data.role) updateData.role = data.role;
+    if (data.file_path) updateData.filePath = data.file_path;
 
-    return result.rows[0];
+    if (data.password) {
+      updateData.password = await bcrypt.hash(data.password, 10);
+    }
+
+    return prisma.employee.update({
+      where: { id: Number(id) },
+      data: updateData,
+    });
+  }
+
+  static async delete(id) {
+    return prisma.employee.delete({
+      where: { id: Number(id) },
+    });
   }
 }
 

@@ -20,7 +20,7 @@ export const createEmployee = async (formData) => {
 };
 
 export const updateEmployee = async (id, formData) => {
-  const response = await axiosInstance.put(`/employee/${id}`, formData, {
+  const response = await axiosInstance.post(`/employee/${id}`, formData, {
     headers: {
       "Content-Type": "multipart/form-data",
     },

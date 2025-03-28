@@ -10,15 +10,12 @@
 
 npm install untuk menginstall semua dependency.
 
-2. Pastikan file .env atau konfigurasi baseURL di axiosInstance.js mengarah ke backend.
+2. Pastikan file .env atau konfigurasi REACT_APP_URL_BACKEND di axiosInstance.js mengarah ke backend.
 
 Menjalankan Aplikasi
 
-3. npm start akan menjalankan di http://localhost:3000 (default React).
+3. npm start akan menjalankan di http://localhost:3001 (default React).
 
-Struktur Folder: (jelaskan secara ringkas)
-
-Jika diaktifkan, set token di localStorage: localStorage.setItem('dummyToken', 'dummyToken123')
 
 ## Installation Backend
 
@@ -26,7 +23,11 @@ Jika diaktifkan, set token di localStorage: localStorage.setItem('dummyToken', '
 
 npm install untuk menginstall dependency.
 
-2. Pastikan PostgreSQL berjalan dan sesuaikan config/db.js.
+2. Pastikan Konfigurasi prisma dan postgreSQL pada schema.prisma. Lalu jalankan perintah berikut
+ 
+npx prisma migrate dev --name init
+npx prisma generate
+
 
 3. Menjalankan Aplikasi
 
@@ -42,7 +43,7 @@ GET /api/employee/:id : Ambil detail karyawan berdasarkan ID
 
 POST /api/employee : Tambah karyawan (form-data, field file untuk upload)
 
-PUT /api/employee/:id : Update karyawan (form-data, field file untuk upload)
+POST /api/employee/:id : Update karyawan (form-data, field file untuk upload)
 
 5. Validasi:
 
@@ -50,9 +51,4 @@ Menggunakan Yup di usecase.
 
 Validasi file upload di middleware/fileUploadValidation.js.
 
-6. Dummy Authorization (opsional):
-
-Tambahkan app.use(dummyAuth) di index.js atau panggil di setiap route.
-
-Set header Authorization: Bearer dummyToken123.
     
