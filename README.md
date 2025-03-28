@@ -47,7 +47,7 @@ POST /api/employee/:id : Update karyawan (form-data, field file untuk upload)
 
 5. Validasi:
 
-Menggunakan Yup di usecase.
+Menggunakan Yup.
 
 Validasi file upload di middleware/fileUploadValidation.js.
 
